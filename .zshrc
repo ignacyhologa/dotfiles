@@ -25,7 +25,14 @@ eval "$(starship init zsh)"
 
 chpwd() ls -F
 
-alias config='/usr/bin/git --git-dir=/Users/ihologa/.cfg/ --work-tree=/Users/ihologa'
+alias cfg='/usr/bin/git --git-dir=/Users/ihologa/.cfg/ --work-tree=/Users/ihologa'
+
+alias ls="ls -F"
+alias rf='rm -rf'
+
+alias reload='source ~/.zshrc'
+alias zshcfg="open -t ~/.zshrc"
+
 alias jn="jupyter notebook"
 alias jnd="jupyter nbextension disable connector-jupyter --py --sys-prefix"
 alias jne="jupyter nbextension enable connector-jupyter --py --sys-prefix"
@@ -33,12 +40,6 @@ alias jni="jupyter nbextension install connector-jupyter --py --sys-prefix"
 alias integration='python -m unittest /Users/ihologa/Documents/work/mstrio-py/production/tests/integration/test_suites/broad_integration_regression.py; python -m unittest /Users/ihologa/Documents/work/mstrio-py/production/tests/integration/test_suites/narrow_integration_regression.py'
 #alias python="python3"
 #alias pip="pip3"
-
-alias ls="ls -F"
-alias rf='rm -rf'
-
-alias reload='source ~/.zshrc'
-alias zshcfg="open -t ~/.zshrc"
 
 
 gamp() {
