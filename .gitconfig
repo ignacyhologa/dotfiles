@@ -1,0 +1,13 @@
+[user]
+	name = ihologa
+	email = ihologa@microstrategy.com
+[core]
+	editor = code --wait
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[fetch]
+  prune = true
+[pager]
+	branch = false
