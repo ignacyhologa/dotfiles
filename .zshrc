@@ -5,7 +5,7 @@ export VISUAL=/usr/local/bin/code
 
 plugins=(git)
 ZSH_THEME="random"
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 
 

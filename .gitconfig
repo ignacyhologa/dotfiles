@@ -4,10 +4,10 @@
 [core]
 	editor = code --wait
 [diff]
-    tool = default-difftool
+	tool = default-difftool
 [difftool "default-difftool"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+	cmd = code --wait --diff $LOCAL $REMOTE
 [fetch]
-  prune = true
+	prune = true
 [pager]
 	branch = false
