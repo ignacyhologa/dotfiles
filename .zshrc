@@ -38,8 +38,6 @@ alias jnd="jupyter nbextension disable connector-jupyter --py --sys-prefix"
 alias jne="jupyter nbextension enable connector-jupyter --py --sys-prefix"
 alias jni="jupyter nbextension install connector-jupyter --py --sys-prefix"
 alias integration='python -m unittest /Users/ihologa/Documents/work/mstrio-py/production/tests/integration/test_suites/broad_integration_regression.py; python -m unittest /Users/ihologa/Documents/work/mstrio-py/production/tests/integration/test_suites/narrow_integration_regression.py'
-#alias python="python3"
-#alias pip="pip3"
 
 
 gamp() {
