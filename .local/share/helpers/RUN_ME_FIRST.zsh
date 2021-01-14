@@ -16,19 +16,20 @@ config_repo() {
     echo -n "INPUT: Git local user email: "
     read cfg_email
     [[ -z cfg_email ]] && return 1
+    alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
     cfg config --local user.name "${cfg_username}"
     cfg config --local user.email "${cfg_email}"
 }
 
 install_core() {
     brew tap -q homebrew/cask-fonts || return 1
-    brews=(${(f)"$(cat ~/.local/helpers/brew_list)"})
-    for brew in ${brews}; do brew -q install ${brew} || return 1; done
+    brews=(${(f)"$(cat ~/.local/share/helpers/brew_list)"})
+    for brew in ${brews}; do brew install -q ${brew} || return 1; done
 }
 
 install_cask() {
-    brew_casks=($(cat ~/.local/helpers/brew_cask_list))
-    for brew_cask in ${brew_casks}; do brew cask install ${brew_cask} || return 1; done
+    brew_casks=($(cat ~/.local/share/helpers/brew_cask_list))
+    for brew_cask in ${brew_casks}; do brew install --cask ${brew_cask}; done
 }
 
 install_pyenv() {
@@ -58,13 +59,13 @@ compile_term() {
     for file in ~/.local/share/terminfo/*(.); do tic -o ~/.terminfo ${file} || return 1; done
 }
 
-echo "\nTASK: GIT **********************************************************************\n"
-echo "[config] ..."
-config_repo || {echo "FAIL"; exit 1}
-echo "[config] ...OK"
-echo "[submodules] ..."
-cfg submodule -q update --init --recursive || {echo "FAIL"; exit 1}
-echo "[submodules] ...OK"
+#echo "\nTASK: GIT #**********************************************************************\n"
+#echo "[config] ..."
+#config_repo || {echo "FAIL"; exit 1}
+#echo "[config] ...OK"
+#echo "[submodules] ..."
+#cfg submodule -q update --init --recursive || {echo "FAIL"; exit 1}
+#echo "[submodules] ...OK"
 
 echo "\nTASK: HOMEBREW *****************************************************************\n"
 echo "[core] ..."

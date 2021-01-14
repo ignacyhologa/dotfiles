@@ -1,7 +1,5 @@
 # export ZSH="$HOME/.oh-my-zsh"
-export LC_ALL=en_US.UTF-8
 # export PATH="/usr/local/bin/python3:$PATH"
-export VISUAL=/usr/local/bin/code
 
 # plugins=(git)
 # ZSH_THEME="random"
@@ -9,29 +7,16 @@ export VISUAL=/usr/local/bin/code
 # eval "$(starship init zsh)"
 
 
-# Fix for arrow-key searching
-# start typing + [Up-Arrow] - fuzzy find history forward
-#if [[ "${terminfo[kcuu1]}" != "" ]]; then
-#	autoload -U up-line-or-beginning-search
-#	zle -N up-line-or-beginning-search
-#	bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
-#fi
-# start typing + [Down-Arrow] - fuzzy find history backward
-#if [[ "${terminfo[kcud1]}" != "" ]]; then
-#	autoload -U down-line-or-beginning-search
-#	zle -N down-line-or-beginning-search
-#	bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
-#fi
-
 chpwd() ls -F
 
 alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 alias ls="ls -F"
-alias rf='rm -rf'
+alias la="ls -AGlt"
+alias rf='rm -rfv'
 
-alias reload='source ~/.zshrc'
-alias zshcfg="open -t ~/.zshrc"
+alias reload='source $ZDOTDIR/.zshrc'
+alias zshcfg="open -t $ZDOTDIR/.zshrc"
 
 alias jn="jupyter notebook"
 alias jnd="jupyter nbextension disable connector-jupyter --py --sys-prefix"
@@ -42,4 +27,4 @@ alias integration='python -m unittest /Users/ihologa/Documents/work/mstrio-py/pr
 
 # Used For pyenv
 eval "$(pyenv init -)"
-pyenv shell 3.9.0
+pyenv shell 3.9.1
