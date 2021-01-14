@@ -1,6 +1,8 @@
 [user]
 	name = ihologa
 	email = ihologa@microstrategy.com
+[init]
+        templatedir = ~/.config/git/template
 [core]
 	editor = code --wait
 [diff]

@@ -59,9 +59,6 @@ compile_term() {
 }
 
 echo "\nTASK: GIT **********************************************************************\n"
-echo "[initialize repo] ..."
-initialize_repo || {echo "FAIL"; exit 1}
-echo "[initialize repo] ...OK"
 echo "[config] ..."
 config_repo || {echo "FAIL"; exit 1}
 echo "[config] ...OK"
