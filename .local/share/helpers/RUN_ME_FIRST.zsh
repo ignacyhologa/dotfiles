@@ -24,7 +24,6 @@ install_core() {
     brew tap -q homebrew/cask-fonts || return 1
     brews=(${(f)"$(cat ~/.local/helpers/brew_list)"})
     for brew in ${brews}; do brew -q install ${brew} || return 1; done
-    brew install -q --HEAD universal-ctags/universal-ctags/universal-ctags || return 1
 }
 
 install_cask() {
@@ -45,6 +44,18 @@ install_venvs() {
     pip install -U pip setuptools wheel || return 1
     pip install -r ~/.local/share/helpers/pip_list || return 1
     pyenv deactivate || return 1
+}
+
+resolve_conflicts() {
+    sudo chown -R $(whoami) /usr/local/share/zsh || return 1
+    sudo chmod -R 755 /usr/local/share/zsh || return 1
+    sudo chown -R $(whoami) /usr/local/share/zsh/site-functions || return 1
+    sudo chmod -R 755 /usr/local/share/zsh/site-functions || return 1
+}
+
+compile_term() {
+    mkdir ~/.terminfo 2> /dev/null
+    for file in ~/.local/share/terminfo/*(.); do tic -o ~/.terminfo ${file} || return 1; done
 }
 
 echo "\nTASK: GIT **********************************************************************\n"
