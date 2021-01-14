@@ -1,0 +1,8 @@
+pandas
+pytest
+yapf
+isort
+flake8
+mypy
+coverage
+rope
