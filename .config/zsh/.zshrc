@@ -1,29 +1,31 @@
-# export ZSH="$HOME/.oh-my-zsh"
-# export PATH="/usr/local/bin/python3:$PATH"
+# initialise plugins
+source $ZPLUGINSDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZPLUGINSDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# plugins=(git)
-# ZSH_THEME="random"
-# source $ZSH/oh-my-zsh.sh
-# eval "$(starship init zsh)"
+
+alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias zshcfg="open -t $ZDOTDIR/.zshrc"
+alias reload='source $ZDOTDIR/.zshrc'
+alias update_homebrew="brew update; brew upgrade; brew upgrade --cask; brew cleanup --prune=all"
+
+PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{103}%~%f%b %# '
 
 
 chpwd() ls -F
-
-alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-
+alias md="mkdir -p"
 alias ls="ls -F"
 alias la="ls -AGlt"
 alias rf='rm -rfv'
+alias grep="grep --color=always"
 
-alias reload='source $ZDOTDIR/.zshrc'
-alias zshcfg="open -t $ZDOTDIR/.zshrc"
-
+# Jupyter notebook
 alias jn="jupyter notebook"
 alias jnd="jupyter nbextension disable connector-jupyter --py --sys-prefix"
 alias jne="jupyter nbextension enable connector-jupyter --py --sys-prefix"
 alias jni="jupyter nbextension install connector-jupyter --py --sys-prefix"
-alias integration='python -m unittest /Users/ihologa/Documents/work/mstrio-py/production/tests/integration/test_suites/broad_integration_regression.py; python -m unittest /Users/ihologa/Documents/work/mstrio-py/production/tests/integration/test_suites/narrow_integration_regression.py'
 
+# mstrio
+alias integration='python -m unittest /Users/ihologa/Documents/work/mstrio-py/production/tests/integration/test_suites/broad_integration_regression.py; python -m unittest /Users/ihologa/Documents/work/mstrio-py/production/tests/integration/test_suites/narrow_integration_regression.py'
 
 # Used For pyenv
 eval "$(pyenv init -)"
