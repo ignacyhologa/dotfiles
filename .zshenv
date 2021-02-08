@@ -14,3 +14,5 @@ export VISUAL="code"
 
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
+
+export RBENV_VERSION=2.4.4
