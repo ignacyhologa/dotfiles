@@ -7,3 +7,12 @@
 [submodule ".local/share/tmux/nord-tmux"]
 	path = .local/share/tmux/nord-tmux
 	url = https://github.com/arcticicestudio/nord-tmux.git
+[submodule ".local/share/tmux/tmux-continuum"]
+	path = .local/share/tmux/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
+[submodule ".local/share/tmux/tmux-resurrect"]
+	path = .local/share/tmux/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
+[submodule ".local/share/zsh/plugins/zsh-colored-man-pages"]
+	path = .local/share/zsh/plugins/zsh-colored-man-pages
+	url = https://github.com/ael-code/zsh-colored-man-pages.git
